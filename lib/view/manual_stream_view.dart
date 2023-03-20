@@ -1,31 +1,60 @@
 import 'package:arrow_pad/arrow_pad.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_joystick/flutter_joystick.dart';
 import 'package:flutter_mjpeg/flutter_mjpeg.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:trac_ai/packages/joystick_view.dart';
+import 'package:trac_ai/view/error_page.dart';
 
-class StreamPageView extends StatelessWidget {
+class StreamPageView extends StatefulWidget {
   const StreamPageView({super.key});
+
+  @override
+  State<StreamPageView> createState() => _StreamPageViewState();
+}
+
+class _StreamPageViewState extends State<StreamPageView> {
+  bool isLoading = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Trac AI"),
+          centerTitle: true,
         ),
         body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Mjpeg(
-                isLive: true,
-                timeout: Duration(seconds: 10),
-                stream: 'http://192.168.137.58:81/stream',
+              CupertinoButton.filled(
+                  disabledColor: Colors.red,
+                  child: const Text("End"),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              const SizedBox(
+                height: 10,
               ),
-              // Container(
-              //   color: Colors.black,
-              //   height: 200,
-              // ),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Mjpeg(
+                  isLive: true,
+                  timeout: const Duration(seconds: 2),
+                  stream: 'http://192.168.137.58:81/stream',
+                  error: (context, error, stack) {
+                    return Container(
+                      padding: const EdgeInsets.all(12),
+                      child: Text(error.toString()),
+                    );
+                  },
+                ),
+              ),
+              Container(
+                color: Colors.black,
+                height: MediaQuery.of(context).size.height * 0.4,
+              ),
               ArrowPad(
                 height: 200,
                 width: 200,

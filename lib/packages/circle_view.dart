@@ -18,7 +18,7 @@ class CircleView extends StatelessWidget {
 
   final String? buttonText;
 
-  CircleView({
+  const CircleView({
     this.size,
     this.color = Colors.transparent,
     this.boxShadow,

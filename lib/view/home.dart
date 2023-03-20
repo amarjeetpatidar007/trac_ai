@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:trac_ai/view/stream_view.dart';
+import 'package:trac_ai/view/automate_stream_view.dart';
+import 'package:trac_ai/view/manual_stream_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,6 +13,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text("Trac AI"),
       ),
       body: Center(
@@ -21,9 +23,17 @@ class HomePage extends StatelessWidget {
             children: [
               CupertinoButton.filled(
                   onPressed: () {
-                    Get.to(() => StreamPageView());
+                    Get.to(() => const StreamPageView());
                   },
-                  child: const Text('Start'))
+                  child: const Text('Manual Using App')),
+              const SizedBox(
+                height: 20,
+              ),
+              CupertinoButton.filled(
+                  onPressed: () {
+                    Get.to(() => const AutomateStreamView());
+                  },
+                  child: const Text('Automate '))
             ]),
       ),
     );
