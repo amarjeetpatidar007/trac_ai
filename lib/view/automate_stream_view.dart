@@ -1,4 +1,3 @@
-import 'package:arrow_pad/arrow_pad.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mjpeg/flutter_mjpeg.dart';
@@ -29,17 +28,13 @@ class AutomateStreamView extends StatelessWidget {
               Mjpeg(
                 isLive: true,
                 timeout: const Duration(seconds: 1),
-                stream: 'http://192.168.137.58:81/stream',
+                stream: 'http://192.168.137.102:81/stream',
                 error: (context, error, stack) {
                   return Container(
                     padding: EdgeInsets.all(12),
                     child: Text(error.toString()),
                   );
                 },
-              ),
-              Container(
-                color: Colors.black,
-                height: MediaQuery.of(context).size.height * 0.4,
               ),
             ]));
   }

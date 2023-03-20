@@ -39,8 +39,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_mjpeg: ^2.0.3
   get: ^4.6.5
-  flutter_joystick: ^0.0.3
-  arrow_pad: ^0.1.5
+  joystick: 
+  # flutter_joystick: ^0.0.3
+  http: ^0.13.5
  
   
 

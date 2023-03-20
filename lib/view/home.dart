@@ -1,10 +1,10 @@
-import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:trac_ai/model/api_service.dart';
 import 'package:trac_ai/view/automate_stream_view.dart';
 import 'package:trac_ai/view/manual_stream_view.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -33,7 +33,24 @@ class HomePage extends StatelessWidget {
                   onPressed: () {
                     Get.to(() => const AutomateStreamView());
                   },
-                  child: const Text('Automate '))
+                  child: const Text('Automate ')),
+              // JoystickView(
+              //     upGesture: GestureDetector(
+              //   onTapDown: (details) {
+              //     APIService().fetchApi(endpoint: APIService.forwardEndPoint);
+              //   },
+              //   onTapUp: (details) {
+              //     APIService().fetchApi(endpoint: APIService.stopBackWheels);
+              //     print("TAP END");
+              //   },
+              //   onLongPressStart: (details) {
+              //     print("Long press start");
+              //     APIService().fetchApi(endpoint: APIService.forwardEndPoint);
+              //   },
+              //   onLongPressEnd: (details) {
+              //     print("Long press end");
+              //   },
+              // )),
             ]),
       ),
     );
