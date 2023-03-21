@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+const String streamUrl = "http://192.168.137.58:81/stream";
+
 class APIService {
   static const url = "http://192.168.137.160";
   static const String rightEndPoint = "/right";
@@ -12,7 +14,7 @@ class APIService {
   static const stopFrontWheels = "/stopFrontWheels";
   static const stopBackWheels = "/stopBackWheels";
 
-  fetchApi({required String endpoint}) async {
+  Future fetchApi({required String endpoint}) async {
     try {
       http.Response response = await http.get(Uri.parse("$url$endpoint"));
       if (response.statusCode == 200) {
