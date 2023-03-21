@@ -1,8 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:trac_ai/model/api_service.dart';
 import 'package:trac_ai/view/automate_stream_view.dart';
 import 'package:trac_ai/view/manual_stream_view.dart';
 
@@ -25,7 +24,7 @@ class HomePage extends StatelessWidget {
                   onPressed: () {
                     Get.to(() => const StreamPageView());
                   },
-                  child: const Text('Manual Using App')),
+                  child: const Text('Operate Tractor Using App')),
               const SizedBox(
                 height: 20,
               ),
@@ -33,9 +32,10 @@ class HomePage extends StatelessWidget {
                   onPressed: () {
                     Get.to(() => const AutomateStreamView());
                   },
-                  child: const Text('Automate '))
+                  child: const Text('Automate Tractor')),
             ]),
       ),
     );
   }
 }
+ 
