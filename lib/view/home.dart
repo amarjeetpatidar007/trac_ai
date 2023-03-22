@@ -13,7 +13,10 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Trac AI"),
+        title: const Text(
+          "Trac AI",
+          style: TextStyle(fontSize: 40),
+        ),
       ),
       body: Center(
         child: Column(
@@ -38,4 +41,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
- 

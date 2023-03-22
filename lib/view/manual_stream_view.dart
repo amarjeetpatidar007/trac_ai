@@ -168,13 +168,13 @@ class _StreamPageViewState extends State<StreamPageView> {
                                                 endpoint:
                                                     APIService.leftEndPoint);
                                           },
-                                          onTapUp: (details) {
-                                            log("LEFT ONTAP CANCEL");
+                                          // onTapUp: (details) {
+                                          //   log("LEFT ONTAP CANCEL");
 
-                                            APIService().fetchApi(
-                                                endpoint:
-                                                    APIService.stopBackWheels);
-                                          },
+                                          //   APIService().fetchApi(
+                                          //       endpoint:
+                                          //           APIService.stopBackWheels);
+                                          // },
                                           onLongPressStart: (detail) {
                                             log("LEFT ONLONG PRESS START");
 
@@ -206,13 +206,13 @@ class _StreamPageViewState extends State<StreamPageView> {
                                                 endpoint:
                                                     APIService.rightEndPoint);
                                           },
-                                          onTapUp: (details) {
-                                            log("RIGHT ONTAP CANCEL");
+                                          // onTapUp: (details) {
+                                          //   log("RIGHT ONTAP CANCEL");
 
-                                            APIService().fetchApi(
-                                                endpoint:
-                                                    APIService.stopBackWheels);
-                                          },
+                                          //   APIService().fetchApi(
+                                          //       endpoint:
+                                          //           APIService.stopBackWheels);
+                                          // },
                                           onLongPressStart: (detail) {
                                             log("RIGHT ONLONG PRESS START");
 
